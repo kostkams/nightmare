@@ -36,7 +36,7 @@ publish: &publish
           echo "npm v$(npm --version)"
     - run:
         name: Install dependencies
-        command: sudo apt-get update && sudo apt-get install dbus-x11 -y
+        command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B && sudo apt-get update && sudo apt-get install dbus-x11 -y
     # Do not explicitly use caching when publishing
     - run:
         name: npm install
