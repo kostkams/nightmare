@@ -9,7 +9,7 @@ test: &test
           echo "npm v$(npm --version)"
     - run:
         name: Install dependencies
-        command: sudo apt-get update && sudo apt-get install dbus-x11 -y
+        command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B && sudo apt-get update && sudo apt-get install dbus-x11 -y
     - restore_cache:
         keys:
           - v1-npm-deps-{{ checksum "package.json" }}
