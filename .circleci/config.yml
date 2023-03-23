@@ -47,7 +47,6 @@ publish: &publish
     - run:
         name: npm publish
         command: |
-          npm init --scope=@kostkams
           npm publish --access public
 
 version: 2
