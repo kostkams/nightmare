@@ -46,7 +46,9 @@ publish: &publish
         command: npm config set "//registry.npmjs.org/:_authToken" $NPM_AUTH
     - run:
         name: npm publish
-        command: npm publish --access public
+        command: |
+          npm init --scope=@kostkams
+          npm publish --access public
 
 version: 2
 jobs:
